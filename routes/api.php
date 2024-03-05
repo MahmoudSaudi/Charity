@@ -28,7 +28,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 });
 
-
+Route::get('/',function(){
+    return 'Hello World';
+});
 
 
 Route::post('register', [RegisterController::class, 'register']);
