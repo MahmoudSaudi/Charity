@@ -28,6 +28,7 @@ class RegisterRequest extends FormRequest
             'email'      => 'required|unique:users,email',
             'gender'     => 'sometimes',
             'password'   => 'required',
+            // 'remember_token'   => 'required',
         ];
     }
 }

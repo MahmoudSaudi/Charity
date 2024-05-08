@@ -23,7 +23,7 @@ class LoginNotification extends Notification
         $this->message ='You just logged in ';
         $this->subject ='New logging in ';
         $this->formEmail ='saudimahmoud7878@gmail.com';
-        $this->message ='smtp';
+        $this->mailer ='smtp';
     }
 
     /**

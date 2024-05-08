@@ -11,7 +11,7 @@ class ProfileController extends Controller
 {
     public function updateProfile(ProfileUpdateRequest $request)
     {
-        
+
         $user = $request->user();
 
         $validateData = $request->validated();

@@ -25,11 +25,10 @@ class LoginController extends Controller
             $user->tokens()->delete();
             //in this lien send token for current user so wo write in this way  {request()->userAgent()}
             $success['token'] = $user->createToken(request()->userAgent())->plainTextToken;
-
+            $user->remember_token = $success['token'];
+            $user->save();
             $success['name'] = $user->first_name;
             $success['success'] = true;
-
-            $user->notify(new LoginNotification());
 
 
             return response()->json($success,200);

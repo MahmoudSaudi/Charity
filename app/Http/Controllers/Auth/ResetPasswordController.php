@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\ResetPasswordRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\User;
 
 class ResetPasswordController extends Controller
@@ -20,6 +21,7 @@ class ResetPasswordController extends Controller
     public function resetPassword(ResetPasswordRequest $request)
     {
         $newOtp = $this->otp->validate($request->email , $request->otp);
+
         if(!$newOtp->status){
             return response()->json(['error' => $newOtp] , 401);
         }
