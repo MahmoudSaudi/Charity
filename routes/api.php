@@ -36,9 +36,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/state',[PaymentController::class,'PostState']);
 });
 
+<<<<<<< HEAD
 
 Route::post('/state/{organization}',[PaymentController::class,'PostState']);
 
+=======
+Route::get('/',function(){
+    return 'Hello World';
+});
+>>>>>>> a18dd57a327e272edeca931d2e9b9a12b705fc57
 
 
 Route::post('register', [RegisterController::class, 'register']);
